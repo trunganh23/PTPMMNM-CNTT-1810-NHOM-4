@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: /complete.php', true, 303);
         exit;
     } catch (Throwable $ex) {
-        error_log('CommunityPass: registration_save_failed');
+        error_log('Quản lý Sự kiện - Nhóm 4: registration_save_failed');
         http_response_code(503);
         $error = 'Không lưu được. Bản nháp vẫn được giữ để thử lại.';
     }

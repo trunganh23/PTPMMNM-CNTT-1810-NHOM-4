@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CommunityPass • Bài thực hành OSS</title>
+<title>Quản lý Sự kiện - Nhóm 4 • Bài thực hành OSS</title>
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/app.css">
 </head>
@@ -11,8 +11,8 @@
 <a class="skip-link" href="#main">Đến nội dung chính</a>
 <header class="site-header">
 <div class="header-inner">
-<strong class="brand">CommunityPass</strong>
-<p>Dự án mẫu học phần Phát triển phần mềm mã nguồn mở</p>
+<strong class="brand">Quản lý Sự kiện - Nhóm 4</strong>
+<p>Đề tài 4: Kiểm thử tự động quyền truy cập - CNTT-1810 Nhóm 4</p>
 </div>
 </header>
 <main id="main" tabindex="-1">
