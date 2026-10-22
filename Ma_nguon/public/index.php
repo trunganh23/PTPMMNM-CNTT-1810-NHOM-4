@@ -2,8 +2,13 @@
 require __DIR__ . '/../src/Input.php';
 require __DIR__ . '/../src/EventFilter.php';
 $events = require __DIR__ . '/../data/events.php';
+
 $query = field($_GET, 'q');
-$visible = filterEvents($events, $query);
+$category = field($_GET, 'category');
+$availableOnly = field($_GET, 'available') === '1';
+
+$visible = filterEvents($events, $query, $category, $availableOnly);
+
 require_once __DIR__ . '/../templates/event-presentation.php';
 require __DIR__ . '/../templates/header.php';
 ?>
@@ -15,6 +20,20 @@ require __DIR__ . '/../templates/header.php';
     <label class="form-field" for="q">Từ khóa
 <input id="q" name="q" value="<?= e($query) ?>">
     </label>
+
+    <label class="form-field" for="category">Loại sự kiện
+        <select id="category" name="category">
+            <option value="">-- Tất cả --</option>
+            <option value="tech" <?= $category === 'tech' ? 'selected' : '' ?>>Tech</option>
+            <option value="design" <?= $category === 'design' ? 'selected' : '' ?>>Design</option>
+        </select>
+    </label>
+
+    <label class="form-field form-field--checkbox" for="available">
+        <input type="checkbox" id="available" name="available" value="1" <?= $availableOnly ? 'checked' : '' ?>>
+        Chỉ còn chỗ
+    </label>
+
     <button>Tìm</button>
 </form>
 <p class="result-count">Kết quả: <?= count($visible) ?></p>
