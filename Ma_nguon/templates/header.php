@@ -20,4 +20,6 @@
 <a href="/">Danh sách sự kiện</a>
 <a href="/ui-demo.php">Sự kiện mẫu</a>
 <a href="/register.php">Đăng ký tham dự</a>
+      <a href="/stats.php">Thống kê CSDL</a>
+      <a href="/check_access.php">Kiểm tra Phân quyền</a>
 </nav>

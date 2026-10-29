@@ -228,3 +228,124 @@ button:hover, input[type="submit"]:hover, .btn:hover {
 button:active, input[type="submit"]:active, .btn:active {
   transform: translateY(0);
 }
+
+/* Ẩn hoàn toàn nút Đến nội dung chính */
+a[href="#main"], .skip-link, [class*="skip"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Đồng bộ Header chuẩn */
+header {
+  display: block !important;
+  text-align: left !important;
+  padding: 1.25rem 2rem !important;
+  background-color: #0b1120 !important;
+  border-bottom: 1px solid #1e293b !important;
+}
+
+header h1 {
+  margin: 0 !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+header p {
+  margin: 0.25rem 0 0 0 !important;
+  font-size: 0.825rem !important;
+  color: #94a3b8 !important;
+  font-family: inherit !important;
+}
+
+/* Đồng bộ thanh Menu chính giữa */
+main nav, .top-nav {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  background: #111827 !important;
+  border: 1px solid #1f2937 !important;
+  border-radius: 10px !important;
+  padding: 0.4rem !important;
+  max-width: 650px !important;
+  margin: 0 auto 2rem auto !important;
+}
+
+main nav a, .top-nav a {
+  text-decoration: none !important;
+  color: #94a3b8 !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 7px !important;
+  white-space: nowrap !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+}
+
+main nav a:hover, .top-nav a:hover {
+  color: #ffffff !important;
+  background: #1f2937 !important;
+}
+
+main nav a.active, main nav a[aria-current="page"], .top-nav a.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Khung nội dung chuẩn */
+main {
+  max-width: 680px !important;
+  margin: 2rem auto !important;
+  padding: 0 1rem !important;
+}
+
+/* Chuẩn hóa đồng nhất Typography trên toàn bộ hệ thống */
+header h1 {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  color: #ffffff !important;
+}
+
+header p {
+  font-size: 0.8rem !important;
+  color: #94a3b8 !important;
+  margin-top: 0.2rem !important;
+}
+
+/* Đồng bộ cỡ chữ và padding menu 5 nút */
+nav, .top-nav {
+  gap: 0.25rem !important;
+  padding: 0.35rem !important;
+}
+
+nav a, .top-nav a {
+  font-size: 0.825rem !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 0.85rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Đồng bộ kích thước tiêu đề h2 các trang */
+h2 {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  margin-top: 1rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Đồng bộ đoạn văn mô tả dưới tiêu đề h2 */
+main > p, .subtitle {
+  font-size: 0.925rem !important;
+  color: #94a3b8 !important;
+  line-height: 1.5 !important;
+}
+
+/* Bỏ huy hiệu ACCESS VERIFIED bên cạnh h2 để không bị kéo lệch dòng */
+h2::after {
+  display: none !important;
+}

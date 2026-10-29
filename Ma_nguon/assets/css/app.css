@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-core: #090d16;
+  --bg-surface: #0f172a;
+  --bg-card: #141e33;
+  --border-subtle: #1e293b;
+  --border-focus: #38bdf8;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-accent: #38bdf8;
+  --primary-gradient: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+  --success-pill: rgba(16, 185, 129, 0.15);
+  --success-text: #34d399;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  background-color: var(--bg-core);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.08) 0px, transparent 50%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header dạng floating banner */
+header {
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+header h1::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+header p {
+  margin: 0.25rem 0 0 1.2rem;
+  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-secondary);
+}
+
+nav {
+  display: flex;
+  background: var(--bg-card);
+  padding: 0.3rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  gap: 0.3rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.825rem;
+  font-weight: 500;
+  padding: 0.5rem 1.1rem;
+  border-radius: 7px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover {
+  color: #fff;
+  background-color: var(--border-subtle);
+}
+
+nav a.active, nav a[aria-current="page"] {
+  color: #fff;
+  background: var(--primary-gradient);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Layout Trung tâm */
+main {
+  flex: 1;
+  max-width: 700px;
+  margin: 3.5rem auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+/* Hộp bước quy trình */
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem 0;
+  letter-spacing: -0.02em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h2::after {
+  content: "ACCESS VERIFIED";
+  font-size: 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  background: var(--success-pill);
+  color: var(--success-text);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+main > p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+/* Card Form hiện đại dạng kính mờ */
+form {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 2.2rem;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+}
+
+/* Các trường nhập liệu */
+.field, .form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 0.55rem;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 9px;
+  padding: 0.85rem 1rem;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  background-color: #16223b;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* Nút Submit */
+button, input[type="submit"], .btn {
+  width: 100%;
+  background: var(--primary-gradient);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+button:hover, input[type="submit"]:hover, .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+button:active, input[type="submit"]:active, .btn:active {
+  transform: translateY(0);
+}
+
+/* Đồng bộ vị trí thanh điều hướng lên góc phải trên cùng */
+header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1.1rem 3rem !important;
+  background-color: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid #1e293b !important;
+}
+
+header nav, main > nav, nav {
+  display: flex !important;
+  gap: 0.5rem !important;
+  background: #141e33 !important;
+  padding: 0.35rem 0.5rem !important;
+  border-radius: 10px !important;
+  border: 1px solid #1e293b !important;
+}
+
+/* Đưa thanh điều hướng nếu nằm trong main lên trên cùng bên phải */
+main > nav {
+  margin: -1.5rem 0 2rem auto !important;
+  width: fit-content !important;
+}
+
+nav a {
+  text-decoration: none !important;
+  color: #94a3b8 !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  padding: 0.45rem 0.9rem !important;
+  border-radius: 7px !important;
+  white-space: nowrap !important;
+  transition: all 0.2s ease !important;
+}
+
+nav a:hover {
+  color: #fff !important;
+  background-color: #1e293b !important;
+}
+
+nav a.active, nav a[aria-current="page"] {
+  color: #fff !important;
+  background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%) !important;
+  font-weight: 600 !important;
+}

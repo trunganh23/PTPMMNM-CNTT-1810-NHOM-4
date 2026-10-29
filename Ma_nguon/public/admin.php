@@ -28,6 +28,8 @@ if ($result) {
     </div>
     <nav>
       <a href="/register.php">Đăng ký tham dự</a>
+      <a href="/stats.php">Thống kê CSDL</a>
+      <a href="/check_access.php">Kiểm tra Phân quyền</a>
       <a href="/ui_demo.php">Sự kiện mẫu</a>
       <a href="/admin.php" class="active">Khu vực Quản trị</a>
       <a href="/audit.php">Giám sát An ninh</a>
